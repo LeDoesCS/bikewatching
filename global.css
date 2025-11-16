@@ -1,0 +1,54 @@
+body {
+  font: 100%/1.5 system-ui, sans-serif;
+  display: flex;
+  flex-flow: column;
+  max-width: 80em;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 1em;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* make the title + slider share a line, with slider pushed to the right
+   on wide screens */
+@media (min-width: 700px) {
+  header {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  header p {
+    flex-basis: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+#time-filter {
+  margin-left: auto;       /* push slider to the right in the header row */
+  display: flex;
+  flex-direction: column;  /* time + em on their own line */
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+#time-filter input[type='range'] {
+  width: 220px;
+}
+
+/* time element and hint on separate lines */
+#time-display {
+  display: block;
+}
+
+#time-hint {
+  display: block;
+  color: #666;
+  font-style: italic;
+  font-size: 0.8rem;
+}
